@@ -20,6 +20,8 @@ $(() => {
     $creditCardDiv.hide();
     $otherTitle.hide();
     buildWarnings();
+    $('#payment').val('credit card');
+    $('#payment').trigger('change');
     $("#name").focus();
 });
 
