@@ -376,6 +376,22 @@ const validateCvv = () => {
     }
 };
 
+const calculateActivitesTotal = e => {
+    if (e.target.checked) {
+        if (e.target.name === 'all') {
+            activitiesTotal += 200;
+        } else {
+            activitiesTotal += 100;
+        }
+    } else {
+        if (e.target.name === 'all') {
+            activitiesTotal -= 200;
+        } else {
+            activitiesTotal -= 100;
+        }
+    }
+}
+
 /*
     Function updateTotal()
     This updates the total variable. 
