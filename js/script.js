@@ -29,10 +29,10 @@ $(() => {
     Event Listeners
 */
 
-// show other text box when other is selected. Remove placehold text as it is redundant if javascript is enabled.
+// show other text box when other is selected.
 $('#title').change((e) => {
     if (e.target.value === 'other') {
-        $otherTitle.attr('placeholder', '');
+        $otherTitle.attr('placeholder', 'Your job role');
         $otherTitle.show();
     } else {
         $otherTitle.hide();
