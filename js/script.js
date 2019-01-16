@@ -144,7 +144,7 @@ const fieldEventValidate = e => {
         validateEmail();
 
     } else if (e.target.type === 'text' && e.target.id === 'cc-num') {
-        validateCreditCard();
+        validateCreditCardNum();
 
     } else if (e.target.type === 'text' && e.target.id === 'zip') {
         validateZip();
@@ -236,8 +236,10 @@ const validateActivity = () => {
         return false;
     }
 };
-const validateCreditCard = () => {
-    if (validateCreditCardNum() && validateZip() && validateCvv()) {
+const validatePayment = () => {
+    if ($('#payment option:selected').val() === 'credit card' && validateCreditCardNum() && validateZip() && validateCvv()) {
+        return true;
+    } else if ($('#payment option:selected').val() === 'paypal' || $('#payment option:selected').val() === 'bitcoin') {
         return true;
     } else {
         return false;
@@ -470,7 +472,7 @@ const disableConflictingActivities = e => {
     it returns true. When it test the fields if they are not valid it will display errors on form.
 */
 const validateForm = () => {
-    if (validateName() && validateEmail() && validateActivity() && validateCreditCard()) {
+    if (validateName() && validateEmail() && validateActivity() && validatePayment()) {
         return true; // all form fields are valid
     } else {
         // set boolean variables of fields to true if valid or false if invalid
