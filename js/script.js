@@ -112,19 +112,25 @@ const showColors = (design) => {
     $colors.children().show();
     if (design === 'js puns') {
         $shirtColorsDiv.show();
-        $colors.children('option[value="tomato"]').hide()
-        $colors.children('option[value="steelblue"]').hide()
-        $colors.children('option[value="dimgrey"]').hide()
+        $colors.children('option[value="tomato"]').hide();
+        $colors.children('option[value="steelblue"]').hide();
+        $colors.children('option[value="dimgrey"]').hide();
         $colors.val('cornflowerblue');
         $colors.trigger('change');
     } else if (design === 'heart js') {
         $shirtColorsDiv.show();
-        $colors.children('option[value="cornflowerblue"]').hide()
-        $colors.children('option[value="darkslategrey"]').hide()
-        $colors.children('option[value="gold"]').hide()
+        $colors.children('option[value="cornflowerblue"]').hide();
+        $colors.children('option[value="darkslategrey"]').hide();
+        $colors.children('option[value="gold"]').hide();
         $colors.val('tomato');
         $colors.trigger('change');
     } else {
+        $colors.children('option[value="cornflowerblue"]').hide();
+        $colors.children('option[value="darkslategrey"]').hide();
+        $colors.children('option[value="gold"]').hide();
+        $colors.children('option[value="tomato"]').hide();
+        $colors.children('option[value="steelblue"]').hide();
+        $colors.children('option[value="dimgrey"]').hide();
         $shirtColorsDiv.hide();
     }
 };
